@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#fafafa">
+
+    <TextView
+        android:id="@+id/workoutTypeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Workout Type"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:elevation="4dp"
+        android:padding="12dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/workout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Workout 1"
+            android:textSize="20sp"
+            android:textColor="#555555"
+            android:paddingVertical="8dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e0e0e0"/>
+
+        <TextView
+            android:id="@+id/workout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Workout 2"
+            android:textSize="20sp"
+            android:textColor="#555555"
+            android:paddingVertical="8dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e0e0e0"/>
+
+        <TextView
+            android:id="@+id/workout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Workout 3"
+            android:textSize="20sp"
+            android:textColor="#555555"
+            android:paddingVertical="8dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e0e0e0"/>
+
+
+        <TextView
+            android:id="@+id/workout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Workout 4"
+            android:textSize="20sp"
+            android:textColor="#555555"
+            android:paddingVertical="8dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e0e0e0"/>
+
+
+
+
+        <TextView
+            android:id="@+id/workout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Workout 5"
+            android:textSize="20sp"
+            android:textColor="#555555"
+            android:paddingVertical="8dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e0e0e0"/>
+
+
+        <TextView
+            android:id="@+id/workout6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Workout 6"
+            android:textSize="20sp"
+            android:textColor="#555555"
+            android:paddingVertical="8dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>
