@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
         buttonLegs.setOnClickListener(v -> {
             navigateToDetails("LEGS");
         });
+
+
+
+
     }
 
     private void navigateToDetails(String workoutType) {

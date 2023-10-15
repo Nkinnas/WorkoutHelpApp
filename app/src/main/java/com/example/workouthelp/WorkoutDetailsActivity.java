@@ -4,6 +4,7 @@ package com.example.workouthelp;
 
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -33,6 +34,9 @@ public class WorkoutDetailsActivity extends AppCompatActivity {
         workout5 = findViewById(R.id.workout5);
         workout6 = findViewById(R.id.workout6);
 
+        Button rerollButton = findViewById(R.id.rerollButton);
+        rerollButton.setOnClickListener(v -> rerollWorkouts());
+
 
 
         String workoutType = getIntent().getStringExtra("workoutType");
@@ -54,9 +58,9 @@ public class WorkoutDetailsActivity extends AppCompatActivity {
         switch (workoutType) {
             case "PUSH":
                 // Sample workouts for PUSH type
-                ArrayList<String> chestWorkouts = new ArrayList<>(Arrays.asList("Push-up", "Bench Press", "Chest Fly", "Incline Dumbell Press", "Flat Dumbell Press", "Smith Machine Incline", "Chest Press Machine", "Incline Barbell Press"));
-                ArrayList<String> tricepWorkouts = new ArrayList<>(Arrays.asList("Tricep Dip", "Skull Crushers", "Tricep Extension", "Tricep Pushdowns", "Tricep Pushdowns (unilateral)", "Tricep Cable Overhead", "Cross Body Tricep Extension"));
-                ArrayList<String> shoulderWorkouts = new ArrayList<>(Arrays.asList("Dumbell Shoulder Press", "Lateral Raise", "Front Raise", "Military Press", "Cable Lateral Raise", "Machine Shoulder Press", "Arnold Press" ));
+                ArrayList<String> chestWorkouts = new ArrayList<>(Arrays.asList("Push-up", "Bench Press", "Chest Fly", "Incline Dumbbell Press", "Flat Dumbbell Press", "Smith Machine Incline", "Chest Press Machine", "Incline Barbell Press","Pec Deck Flys", "Decline Bench Press"));
+                ArrayList<String> tricepWorkouts = new ArrayList<>(Arrays.asList("Tricep Dip", "Skull Crushers", "Tricep Extension", "Tricep Pushdowns", "Tricep Pushdowns (unilateral)", "Tricep Cable Overhead", "Cross Body Tricep Extension", "Close-Grip Bench Press", "Tricep Kickbacks"));
+                ArrayList<String> shoulderWorkouts = new ArrayList<>(Arrays.asList("Dumbbell Shoulder Press", "Lateral Raise", "Front Raise", "Military Press", "Cable Lateral Raise", "Machine Shoulder Press", "Arnold Press", "Seated Military Press", "Machine Lateral Raise"));
 
 
                 workouts.add(pickAndRemoveRandomExercise(chestWorkouts, random));
@@ -69,8 +73,8 @@ public class WorkoutDetailsActivity extends AppCompatActivity {
 
 
             case "PULL":
-                ArrayList<String> backWorkouts = new ArrayList<>(Arrays.asList("Pull-up", "Bent Over Row", "Lat Pull Down", "Face Pull", "Rear Delt Fly", "Cable Row", "Machine Row","Dumbell Rear Delts"));
-                ArrayList<String> bicepWorkouts = new ArrayList<>(Arrays.asList("Barbell Curl", "Hammer Curl", "Concentration Curl", "Dumbell Curl", "Narrow Grip Pullups", "Spider Curls"));
+                ArrayList<String> backWorkouts = new ArrayList<>(Arrays.asList("Pull-up", "Bent Over Row", "Lat Pull Down", "Face Pull", "Rear Delt Fly", "Cable Row", "Machine Row","Dumbbell Rear Delts", "T-Bar Row", "Chin Up", "Single Arm Dumbbell Row", "Bodyweight Rows", "Inverted Row"));
+                ArrayList<String> bicepWorkouts = new ArrayList<>(Arrays.asList("Barbell Curl", "Hammer Curl", "Concentration Curl", "Dumbbell Curl", "Narrow Grip Pullup", "Spider Curls", "Preacher Curl", "EZ Bar Curl", "Machine Bicep Curl", "Zottman Curl", "Cross Body Hammer Curl"));
 
 
                 workouts.add(pickAndRemoveRandomExercise(backWorkouts, random));
@@ -83,7 +87,7 @@ public class WorkoutDetailsActivity extends AppCompatActivity {
 
 
             case "LEGS":
-                ArrayList<String> legWorkouts = new ArrayList<>(Arrays.asList("Squat", "Lunge", "Deadlift", "Leg Press", "Leg Curl", "Calf Raise", "Smith Machine Squats", "Goblet Squats", "RDL", "Split Squat", "Hack Squat", "Leg Extension", "Leg Curl"));
+                ArrayList<String> legWorkouts = new ArrayList<>(Arrays.asList("Squat", "Lunge", "Deadlift", "Leg Press", "Leg Curl", "Calf Raise", "Smith Machine Squats", "Goblet Squats", "RDL", "Split Squat", "Hack Squat", "Leg Extension", "Leg Curl", "Sumo Deadlift", "Walking Lunges", "Barbell HipThrust", "Pistol Squats", "Sissy Squats", "Hip Adduction", "Glute Abduction", "Donkey Calf Raises", "Smith Machine Squats", "Single-Leg Leg Press", "Cable Squats", "Wall Sits", "Toe Raises with Dumbbells", "Leg Press Calf", "Seated Calf Raises", "Sled Pushes", "Dumbbell Reverse Lunges" ));
                 workouts.add(pickAndRemoveRandomExercise(legWorkouts, random));
                 workouts.add(pickAndRemoveRandomExercise(legWorkouts, random));
                 workouts.add(pickAndRemoveRandomExercise(legWorkouts, random));
@@ -113,6 +117,13 @@ public class WorkoutDetailsActivity extends AppCompatActivity {
         workout4.setText(workouts.get(3));
         workout5.setText(workouts.get(4));
         workout6.setText(workouts.get(5));
+    }
+
+
+    private void rerollWorkouts() {
+        String workoutType = workoutTypeTitle.getText().toString();
+        ArrayList<String> newSelectedWorkouts = generateWorkouts(workoutType);
+        displayWorkouts(newSelectedWorkouts);
     }
 
 
